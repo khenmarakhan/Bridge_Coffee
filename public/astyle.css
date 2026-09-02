@@ -1,0 +1,468 @@
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary: #6f4e37;
+  --accent: #d4a373;
+  --light-bg: #fdfaf7;
+  --white: #ffffff;
+  --text-dark: #2d241e;
+  --text-muted: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background-color: var(--white);
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8%;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Anton', sans-serif;
+  color: #2d241e;
+}
+
+nav .logo img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+nav .logo span {
+  margin-right: 5px;
+  color: #bc2d22;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #2d241e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links .active-link {
+  color: #6f4e37;
+  border-bottom: 2px solid #d4a373;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-btn {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.nav-btn:hover {
+  background-color: var(--accent);
+}
+@media (max-width: 480px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 10px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 10px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+  }
+}
+/* --- Main Layout --- */
+.container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  background: var(--white);
+  margin-bottom: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card.reverse {
+  direction: rtl;
+}
+.profile-card.reverse .info-box {
+  direction: ltr;
+}
+
+.img-box {
+  height: 525px;
+} /* Perfect 4x6 Portrait Ratio */
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-box {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.role-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.info-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-family: 'Anton';
+}
+.info-box p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-family: 'Share Tech';
+}
+/* --- Socials & Promo --- */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+.social-item {
+  text-decoration: none;
+  color: var(--text-dark);
+  background: #f9f9f9;
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+.social-item:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.promo-banner {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+footer {
+  background: var(--text-dark);
+  color: #aaa;
+  padding: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* ============================================================
+           SPECIFIC RESPONSIVE QUERIES
+           ============================================================ */
+
+/* TABLET: 481px to 1279px */
+@media (max-width: 1279px) and (min-width: 481px) {
+  header {
+    padding: 20px 5%;
+  }
+  .container {
+    margin: 40px auto;
+  }
+  .profile-card {
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+  }
+  .img-box {
+    height: 450px;
+  }
+  .info-box {
+    padding: 30px;
+  }
+  .info-box h3 {
+    font-size: 1.7rem;
+  }
+}
+
+/* MOBILE PHONE: Below 480px */
+@media (max-width: 480px) {
+  header {
+    padding: 15px 5%;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .nav-btn {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  .container {
+    margin: 20px auto;
+  }
+  .profile-card,
+  .profile-card.reverse {
+    grid-template-columns: 1fr; /* Stack vertically */
+    direction: ltr;
+  }
+  .img-box {
+    height: 400px;
+  } /* Adjust for mobile view */
+  .info-box {
+    padding: 25px;
+  }
+  .info-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+  } /* Socials stack one by one */
+  .promo-banner {
+    padding: 20px;
+  }
+}
+/* Developer Specific Professional Styling */
+.developer-premium {
+  border: 1px solid #eef0f2;
+  transition: box-shadow 0.4s ease;
+}
+
+.dev-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.about-me-div {
+  background: #fdfdfd;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.about-me-div p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Modern Contact Grid with Images */
+.contact-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+}
+
+.contact-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.contact-item:hover {
+  background: #f4f1ee;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.academic-id-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  gap: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.school-identity {
+  flex: 0 0 80px;
+  border-right: 1px solid #eee;
+  padding-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-logo {
+  width: 80px;
+  height: auto;
+  filter: grayscale(20%);
+}
+
+.student-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-row {
+  display: flex;
+  gap: 30px;
+}
+
+.detail-item {
+  flex: 1;
+}
+
+.detail-item small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.detail-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-family: 'Share Tech';
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 1279px) and (min-width: 481px) {
+  .academic-id-card {
+    gap: 20px;
+    padding: 20px;
+  }
+  .school-logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .academic-id-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .school-identity {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  .detail-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Specific Media Queries for Score */
+@media (max-width: 1279px) and (min-width: 481px) {
+  .school-info-card {
+    gap: 10px;
+    padding: 15px;
+  }
+  .school-info-card strong {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-info-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .contact-grid-modern {
+    grid-template-columns: 1fr;
+  }
+  .dev-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

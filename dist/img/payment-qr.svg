@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">QR payment placeholder</title>
+  <desc id="desc">Replace this file with the coffee shop payment QR image.</desc>
+  <rect width="360" height="360" rx="28" fill="#fffaf4"/>
+  <g fill="#3e2723">
+    <path d="M38 38h98v98H38zm20 20v58h58V58z"/><path d="M224 38h98v98h-98zm20 20v58h58V58z"/><path d="M38 224h98v98H38zm20 20v58h58v-58z"/>
+    <path d="M162 38h24v24h-24zm0 48h24v50h-24zm48 76h24v24h-24zm48 0h64v24h-64zm-96 0h24v64h-24zm48 48h52v24h-52zm76 0h36v64h-24v-40h-12zm-124 40h24v72h-24zm48 12h24v60h-24zm48 0h24v24h-24zm48 36h36v24h-36z"/>
+  </g>
+  <circle cx="180" cy="180" r="34" fill="#d4a373"/>
+  <path d="M164 195c4-22 13-35 32-43 1 22-8 37-32 43z" fill="#3e2723"/>
+</svg>
